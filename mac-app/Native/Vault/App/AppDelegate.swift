@@ -1,14 +1,23 @@
 import Cocoa
 
-@main
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     private var mainWindowController: MainWindowController?
 
     func applicationDidFinishLaunching(_ notification: Notification) {
-        mainWindowController = MainWindowController()
-        mainWindowController?.showWindow(nil)
-        NSApp.activate(ignoringOtherApps: true)
+        NSLog("[AppDelegate] applicationDidFinishLaunching")
+        let wc = MainWindowController()
+        mainWindowController = wc
+        NSLog("[AppDelegate] window: \(String(describing: wc.window))")
+        wc.window?.makeKeyAndOrderFront(nil)
+        NSLog("[AppDelegate] isVisible: \(wc.window?.isVisible ?? false), windows: \(NSApp.windows.count)")
+        if #available(macOS 14.0, *) {
+            NSApp.activate()
+        } else {
+            NSApp.activate(ignoringOtherApps: true)
+        }
+        wc.loadContent()
+        NSLog("[AppDelegate] loadContent done")
     }
 
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {

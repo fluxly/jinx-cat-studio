@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		036388639B57E13A008A2878 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFF0D2E7DE5A55F4D618729 /* main.swift */; };
 		04F087DE8A1DA3098C52821E /* MigrationRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D89DB9E2DF43FEF3FD26BB /* MigrationRunner.swift */; };
 		06F8A42045211B6342F2DDF5 /* TagRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CAEED6430D56159DA299E3 /* TagRepository.swift */; };
 		0BF4836BAD5AFFAA2263D3D1 /* BridgeMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A05B352F5D29A84310A3F96 /* BridgeMessage.swift */; };
+		1066F5E459A5B38DC5F684C9 /* schema in Resources */ = {isa = PBXBuildFile; fileRef = 103D99872D9A3D0220A2503C /* schema */; };
 		142218CE5794C653F67EA663 /* BridgeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486636D13CD3DA268C4D9108 /* BridgeResponse.swift */; };
 		1429AA11832A6690BE86BE3F /* AssetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3123616A418111AC292B582E /* AssetRepository.swift */; };
 		177CED5A62BCB2C8501CC59C /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D5954C5BF68434C1631214 /* MainWindowController.swift */; };
@@ -38,6 +40,7 @@
 		CD93133D1D5586303F16538B /* SQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3FFCF9721CB4B2B33E1E4C /* SQLiteManager.swift */; };
 		CE700BD40E1BB047CF166439 /* AssetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9456889A5F48F6E88BDD265F /* AssetService.swift */; };
 		CFAA9251DF28F5CE18B21E24 /* CategoryDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709DDF905F0A1CE78E2BDDF4 /* CategoryDTO.swift */; };
+		D37965F5A1E38A505D25BCA0 /* web in Resources */ = {isa = PBXBuildFile; fileRef = A9407EB6293700639BAAB4F0 /* web */; };
 		D5A0819CDE442642927E3198 /* DocumentSummaryDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD24F019EFC6B88DA91B8931 /* DocumentSummaryDTO.swift */; };
 		E02EC7EA2B7F96F81ECA0B28 /* BridgeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB867A2760BD0198987D0600 /* BridgeTests.swift */; };
 		E089ECF2613AA32C787BFF59 /* HandlerHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78E4DE3F724361C2260D739 /* HandlerHelpers.swift */; };
@@ -59,6 +62,7 @@
 /* Begin PBXFileReference section */
 		0395A9B47D11834D5345AC45 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		0B1150FCFE5E009266583B92 /* CategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryService.swift; sourceTree = "<group>"; };
+		103D99872D9A3D0220A2503C /* schema */ = {isa = PBXFileReference; lastKnownFileType = folder; name = schema; path = Vault/Resources/schema; sourceTree = SOURCE_ROOT; };
 		2277AE6C2F73C09310901800 /* SearchHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHandler.swift; sourceTree = "<group>"; };
 		29D5954C5BF68434C1631214 /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		3123616A418111AC292B582E /* AssetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetRepository.swift; sourceTree = "<group>"; };
@@ -79,9 +83,11 @@
 		9456889A5F48F6E88BDD265F /* AssetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetService.swift; sourceTree = "<group>"; };
 		A7E2BEF2AF52A034DD9B04CA /* CategoriesHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesHandler.swift; sourceTree = "<group>"; };
 		A88A998D0D8240E463962BB3 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
+		A9407EB6293700639BAAB4F0 /* web */ = {isa = PBXFileReference; lastKnownFileType = folder; name = web; path = Vault/Resources/web; sourceTree = SOURCE_ROOT; };
 		AAA5FA7DA4D9EB7FFD88F933 /* CategoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRepository.swift; sourceTree = "<group>"; };
 		AC44DE744CE0DAFF9E0445D0 /* TagsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsHandler.swift; sourceTree = "<group>"; };
 		AD4E2586AC32B458B06137E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ADFF0D2E7DE5A55F4D618729 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AF0CE0A5E0A29CD048CA6992 /* TagService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagService.swift; sourceTree = "<group>"; };
 		B11D24FC5A3660F0FE3BA934 /* DocumentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentService.swift; sourceTree = "<group>"; };
 		BB867A2760BD0198987D0600 /* BridgeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeTests.swift; sourceTree = "<group>"; };
@@ -160,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				AD4E2586AC32B458B06137E3 /* AppDelegate.swift */,
+				ADFF0D2E7DE5A55F4D618729 /* main.swift */,
 				29D5954C5BF68434C1631214 /* MainWindowController.swift */,
 				3A424590F2A843FE07F15EC5 /* WebViewController.swift */,
 			);
@@ -219,6 +226,8 @@
 		C8F7179879B10AC8F79B78A0 = {
 			isa = PBXGroup;
 			children = (
+				103D99872D9A3D0220A2503C /* schema */,
+				A9407EB6293700639BAAB4F0 /* web */,
 				6C6B7A36C0012312DECA4731 /* App */,
 				0AEBDBCD470A5A2407457792 /* Bridge */,
 				FFCC25515818CA975294DF1C /* Database */,
@@ -259,6 +268,7 @@
 			buildConfigurationList = E34AA4A293A909B9F0830AE2 /* Build configuration list for PBXNativeTarget "Vault" */;
 			buildPhases = (
 				FAD54CA8499EE0722917C7EF /* Sources */,
+				612812AA241EB8250D93A749 /* Resources */,
 				B3AEB9529D0E7E6F19F388AD /* Frameworks */,
 			);
 			buildRules = (
@@ -327,6 +337,18 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		612812AA241EB8250D93A749 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1066F5E459A5B38DC5F684C9 /* schema in Resources */,
+				D37965F5A1E38A505D25BCA0 /* web in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9DAFFBE885EFD54A96FC3938 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -375,6 +397,7 @@
 				BED29E2BC257398B357EE6FF /* TagService.swift in Sources */,
 				520E7B98B6B924B3556FDCCD /* TagsHandler.swift in Sources */,
 				83BC4A2FC99C94F9B2372600 /* WebViewController.swift in Sources */,
+				036388639B57E13A008A2878 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

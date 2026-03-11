@@ -21,8 +21,12 @@ targets:
       - path: Vault/DTO
       - path: Vault/Repositories
       - path: Vault/Services
-    resources:
-      - path: Vault/Resources
+      - path: Vault/Resources/web
+        type: folder
+        buildPhase: resources
+      - path: Vault/Resources/schema
+        type: folder
+        buildPhase: resources
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.jinxcatstudio.vault

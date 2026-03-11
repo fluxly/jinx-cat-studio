@@ -1,0 +1,46 @@
+# ─── macOS ────────────────────────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ─── Xcode ────────────────────────────────────────────────────────────────────
+# User-specific Xcode state — never shared
+xcuserdata/
+*.xcuserstate
+*.xcscheme
+
+# Xcode workspace user data inside xcworkspace
+*.xcworkspace/xcuserdata/
+*.xcworkspace/xcshareddata/
+
+# Build output
+DerivedData/
+build/
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Swift Package Manager
+.build/
+.swiftpm/
+
+# Resolved package pins — commit Package.resolved if you want reproducible builds;
+# omit the line below if so. For now, treating it as a generated artifact.
+# Package.resolved
+
+# ─── Node / Web ───────────────────────────────────────────────────────────────
+node_modules/
+
+# TypeScript / Vite build output
+dist/
+.cache/
+*.tsbuildinfo
+
+# ─── Claude Code ──────────────────────────────────────────────────────────────
+.claude/settings.local.json
+
+# ─── Editor / IDE ─────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo

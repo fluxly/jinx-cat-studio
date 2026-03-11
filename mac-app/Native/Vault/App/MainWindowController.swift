@@ -19,14 +19,11 @@ class MainWindowController: NSWindowController {
         window.titleVisibility = .visible
 
         self.init(window: window)
+    }
 
+    func loadContent() {
         let webVC = WebViewController()
         self.webViewController = webVC
         self.contentViewController = webVC
-    }
-
-    override func windowDidLoad() {
-        super.windowDidLoad()
-        window?.makeKeyAndOrderFront(nil)
     }
 }

@@ -7,7 +7,11 @@
       "Bash(cd /Users/shawn/Documents/_Projects/_Jinx-Cat-Studio/mac-app/Native && xcodebuild -project Vault.xcodeproj -scheme Vault -destination \"platform=macOS\" -configuration Debug build 2>&1 | grep -E \"error:|warning:\" | head -40)",
       "Bash(cd /Users/shawn/Documents/_Projects/_Jinx-Cat-Studio/mac-app/Native && xcodebuild -project Vault.xcodeproj -scheme Vault -destination \"platform=macOS\" -configuration Debug build 2>&1 | grep -E \"error:|warning:|BUILD\" | head -50)",
       "Bash(cd /Users/shawn/Documents/_Projects/_Jinx-Cat-Studio/mac-app/Native && xcodebuild -project Vault.xcodeproj -scheme VaultTests -destination \"platform=macOS\" -configuration Debug build-for-testing 2>&1 | grep -E \"error:|warning:|BUILD\" | head -40)",
-      "Bash(cd /Users/shawn/Documents/_Projects/_Jinx-Cat-Studio/mac-app/Native && /opt/homebrew/bin/xcodegen generate 2>&1 && xcodebuild -project Vault.xcodeproj -scheme VaultTests -destination \"platform=macOS\" -configuration Debug build-for-testing 2>&1 | grep -E \"error:|warning:|BUILD\" | head -40)"
+      "Bash(cd /Users/shawn/Documents/_Projects/_Jinx-Cat-Studio/mac-app/Native && /opt/homebrew/bin/xcodegen generate 2>&1 && xcodebuild -project Vault.xcodeproj -scheme VaultTests -destination \"platform=macOS\" -configuration Debug build-for-testing 2>&1 | grep -E \"error:|warning:|BUILD\" | head -40)",
+      "Bash(cd /Users/shawn/Documents/_Projects/_jinx-cat-studio/mac-app/Native && xcodegen generate 2>&1)",
+      "Bash(open /Users/shawn/Documents/_Projects/_jinx-cat-studio/mac-app/Native/Vault.xcodeproj)",
+      "Bash(xcodegen --version && ls /Users/shawn/Documents/_Projects/_jinx-cat-studio/mac-app/Native/Vault/Resources/)",
+      "Bash(xcodegen generate:*)"
     ]
   }
 }
