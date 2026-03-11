@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vault</title>
+  <link rel="stylesheet" href="../src/styles/app.css" />
+</head>
+<body>
+  <app-shell id="app"></app-shell>
+
+  <script>
+    // Bridge callback registry
+    window.__pendingBridgeCalls = new Map();
+
+    window.__bridgeCallback = function(id, jsonString) {
+      const pending = window.__pendingBridgeCalls.get(id);
+      if (!pending) return;
+      window.__pendingBridgeCalls.delete(id);
+      try {
+        const response = JSON.parse(jsonString);
+        if (response.success) pending.resolve(response.data);
+        else pending.reject(response.error);
+      } catch (e) {
+        pending.reject({ code: 'ENCODING_ERROR', message: e.message });
+      }
+    };
+
+    window.__bridgeCallbackB64 = function(id, base64) {
+      try {
+        window.__bridgeCallback(id, atob(base64));
+      } catch (e) {
+        const pending = window.__pendingBridgeCalls.get(id);
+        if (pending) {
+          window.__pendingBridgeCalls.delete(id);
+          pending.reject({ code: 'ENCODING_ERROR', message: e.message });
+        }
+      }
+    };
+  </script>
+  <script type="module" src="../src/bridge/bridge-client.ts"></script>
+</body>
+</html>

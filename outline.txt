@@ -1,0 +1,84 @@
+Jinx Cat Studio
+
+Roles and Agents (and skills):
+1. The Director: meaning, agency, continuity of cosmology
+2. The Editor: craft agency and implementor
+3. The Plenipot: Plenipotentiary) spokesperson, word wrangler, external meaning and communication
+4. The Cartoonist: emotional core, tribal identity theatre
+5. The Hacker: wild, experimental, meaningless play
+6. Old Priest and Young Priest: moral agency, conservative and liberal respectively
+7. The Critic: reverse psychology PR plenipot, critical agency from the outside
+8. The Beancounter: resource tracking and telemetry
+
+Other potential Roles:
+- Union rep for workers
+- Ombudsman
+- Futurist in Residence
+
+Complementary functional pairs:
+
+* Implementation 
+    - The Director and The Editor vs. The Cartoonist and The Hacker
+* Plan
+    - The Plenipot and The Priests vs. The Critic and The Beancounter
+
+Category: Tag-Primary: Tag-Secondary
+
+Categories (also tags, by default Notes if not specified)
+    Nonagram
+    Journal
+    Notes
+    Links
+    Quotes
+    Projects
+    Sounds 
+    Pictures
+    Tools (could be slop, could be promisig experiment)
+    Apps (published tools wg white noise, dash diet)
+    
+Tags
+Tags can be tiered with colons, eg Materials: Vendors
+
+    Discovery: AI
+    Discovery: Music
+    Discovery: Tools
+    Materials: Electronics
+    Materials: Hardware
+    Materials: Tools
+    Get
+    Watch
+    Eat
+    Follow
+    Read
+    Travel
+    Travel: Places
+    Travel: Bakeries
+    Exercise
+    
+Checklists
+Scrapbook: collection
+Codex: published volume
+    - volumes
+    - working list
+    - daily journal
+    - special project e.g. frodus
+    
+Deployments
+- gallery show (assets, checklists, docs, materials)
+- app (e.g. bakery nagivator)
+- album
+- nightly snapshot volumes; ABP Always Be Publishing
+
+Watchdogs
+    - 5 min cron: diffs to TODO, _Projects
+    - daily check in cron: select published status of all, check backlist, plan next day
+    - daily housekeeping cron: generate current working volumes PDF and HTML
+    - email: async inputs, entries
+    
+Build on writers room
+build on as220 stack
+places to intervene in a system
+
+
+References
+The Emmissaries Guide to Worlding, Ian Cheng

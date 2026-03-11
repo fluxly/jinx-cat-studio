@@ -1,0 +1,6 @@
+/* See Native/Vault/Resources/web/app.css for the canonical CSS source.
+   This file is the TypeScript-project-side source that gets copied to Resources/web/app.css
+   when running `npm run build`. */
+
+/* Import is not needed — the full CSS is maintained in Native/Vault/Resources/web/app.css
+   and copied by the build script. This file exists as a source reference. */

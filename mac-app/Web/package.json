@@ -1,0 +1,14 @@
+{
+  "name": "vault-web",
+  "version": "1.0.0",
+  "description": "Vault document manager web UI",
+  "private": true,
+  "scripts": {
+    "build": "tsc && cp -r dist/* ../Native/Vault/Resources/web/",
+    "watch": "tsc -w",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
