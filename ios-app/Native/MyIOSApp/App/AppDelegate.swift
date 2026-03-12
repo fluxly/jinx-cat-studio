@@ -1,5 +1,8 @@
 import UIKit
 
+// If you add new Swift files to the source folders, just re-run xcodegen generate from
+// Native and the project will update
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

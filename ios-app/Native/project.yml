@@ -1,0 +1,73 @@
+name: MyIOSApp
+
+options:
+  bundleIdPrefix: com.jinxcatstudio
+  deploymentTarget:
+    iOS: "16.0"
+  xcodeVersion: "15"
+  generateEmptyDirectories: true
+
+targets:
+  MyIOSApp:
+    type: application
+    platform: iOS
+    deploymentTarget: "16.0"
+
+    sources:
+      - path: MyIOSApp/App
+      - path: MyIOSApp/Bridge
+      - path: MyIOSApp/Handlers
+      - path: MyIOSApp/Services
+      - path: MyIOSApp/DTO
+      - path: MyIOSApp/Utilities
+      - path: MyIOSApp/Resources/Web
+        type: folder
+        buildPhase: resources
+      - path: MyIOSApp/Resources/Assets.xcassets
+        buildPhase: resources
+
+    info:
+      path: MyIOSApp/Resources/Info.plist
+      properties:
+        CFBundleDisplayName: Utility App
+        UILaunchScreen: {}
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+          UISceneConfigurations:
+            UIWindowSceneSessionRoleApplication:
+              - UISceneConfigurationName: Default Configuration
+                UISceneDelegateClassName: $(PRODUCT_MODULE_NAME).SceneDelegate
+        NSCameraUsageDescription: Camera access is needed to capture photos for email.
+        NSPhotoLibraryUsageDescription: Photo library access is needed to attach photos to email.
+        UIRequiresFullScreen: true
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+
+    settings:
+      base:
+        SWIFT_VERSION: "5.9"
+        PRODUCT_BUNDLE_IDENTIFIER: com.jinxcatstudio.myiosapp
+        TARGETED_DEVICE_FAMILY: "1"
+        MARKETING_VERSION: "1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        ENABLE_PREVIEWS: "NO"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+
+    preBuildScripts:
+      - name: Build Web Assets
+        script: |
+          set -e
+          WEB_DIR="${SRCROOT}/../Web"
+          cd "$WEB_DIR"
+          if [ ! -d node_modules ]; then
+            npm install
+          fi
+          npm run build
+        basedOnDependencyAnalysis: false
+        showEnvVars: false
+
+    dependencies:
+      - sdk: MessageUI.framework
+      - sdk: AVFoundation.framework

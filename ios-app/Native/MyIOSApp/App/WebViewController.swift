@@ -63,6 +63,11 @@ class WebViewController: UIViewController {
         webView = WKWebView(frame: .zero, configuration: config)
         webView.navigationDelegate = self
         webView.translatesAutoresizingMaskIntoConstraints = false
+        #if DEBUG
+        if #available(iOS 16.4, *) {
+            webView.isInspectable = true
+        }
+        #endif
         webView.scrollView.contentInsetAdjustmentBehavior = .never
 
         view.addSubview(webView)
@@ -89,46 +94,78 @@ class WebViewController: UIViewController {
     }
 
     private func loadWebContent() {
-        guard let webDir = Bundle.main.url(
-            forResource: "Web",
-            withExtension: nil,
-            subdirectory: "Resources"
-        ),
-        let indexURL = Bundle.main.url(
-            forResource: "index",
-            withExtension: "html",
-            subdirectory: "Resources/Web"
-        ) else {
-            AppLogger.log(.error, "Could not locate Resources/Web/index.html in bundle — showing error page")
+        // Xcode flattens folder-reference contents to the bundle root, so index.html
+        // and all assets land directly in resourceURL (not in a Web/ subdirectory).
+        guard let resourceURL = Bundle.main.resourceURL else {
+            AppLogger.log(.error, "Bundle resourceURL is nil — showing error page")
             loadErrorPage()
             return
         }
 
-        webView.loadFileURL(indexURL, allowingReadAccessTo: webDir)
+        let indexURL = resourceURL.appendingPathComponent("index.html")
+
+        guard FileManager.default.fileExists(atPath: indexURL.path) else {
+            AppLogger.log(.error, "index.html not found at \(indexURL.path) — showing error page")
+            loadErrorPage()
+            return
+        }
+
+        // Grant read access to the full bundle root so all assets resolve correctly.
+        webView.loadFileURL(indexURL, allowingReadAccessTo: resourceURL)
         AppLogger.log(.info, "Loading index.html from bundle: \(indexURL.path)")
     }
 
     private func loadErrorPage() {
+        let resourceURL = Bundle.main.resourceURL
+        let resourcePath = resourceURL?.path ?? "nil"
+        let webPath = resourceURL?.appendingPathComponent("Web").path ?? "nil"
+
+        // List top-level bundle contents for diagnosis
+        let bundleContents: String
+        if let rURL = resourceURL,
+           let items = try? FileManager.default.contentsOfDirectory(atPath: rURL.path) {
+            bundleContents = items.sorted().joined(separator: "<br>")
+        } else {
+            bundleContents = "(could not list)"
+        }
+
+        // List Web/ contents if the directory exists
+        let webContents: String
+        if let rURL = resourceURL {
+            let webDir = rURL.appendingPathComponent("Web")
+            if let items = try? FileManager.default.contentsOfDirectory(atPath: webDir.path) {
+                webContents = items.sorted().joined(separator: "<br>")
+            } else {
+                webContents = "(directory not found)"
+            }
+        } else {
+            webContents = "(no resourceURL)"
+        }
+
         let html = """
         <!DOCTYPE html>
         <html>
         <head>
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <style>
-                body { font-family: -apple-system, sans-serif; display: flex; align-items: center;
-                       justify-content: center; min-height: 100vh; margin: 0; background: #f2f2f7; }
-                .card { background: white; border-radius: 12px; padding: 32px; max-width: 320px;
-                        text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
-                h2 { color: #1c1c1e; margin: 0 0 12px; }
-                p { color: #636366; margin: 0; font-size: 14px; line-height: 1.5; }
+                body { font-family: -apple-system, sans-serif; margin: 0; padding: 16px;
+                       background: #f2f2f7; font-size: 13px; }
+                h2 { color: #c0392b; margin: 0 0 12px; }
+                h3 { margin: 16px 0 4px; color: #1c1c1e; font-size: 13px; }
+                .path { background: #fff; border-radius: 6px; padding: 8px;
+                        word-break: break-all; color: #333; margin-bottom: 4px; }
             </style>
         </head>
         <body>
-            <div class="card">
-                <h2>Web Assets Missing</h2>
-                <p>Run <code>npm run build</code> in the Web/ directory and copy the output
-                   to Resources/Web/ before building the app.</p>
-            </div>
+            <h2>Web Assets Missing</h2>
+            <h3>resourceURL</h3>
+            <div class="path">\(resourcePath)</div>
+            <h3>Looking for Web/ at</h3>
+            <div class="path">\(webPath)</div>
+            <h3>Bundle root contents</h3>
+            <div class="path">\(bundleContents)</div>
+            <h3>Web/ contents</h3>
+            <div class="path">\(webContents)</div>
         </body>
         </html>
         """

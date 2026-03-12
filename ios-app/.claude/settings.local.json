@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Read(//Users/shawn/Documents/_Projects/_Jinx-Cat-Studio/**)"
+      "Read(//Users/shawn/Documents/_Projects/_Jinx-Cat-Studio/**)",
+      "Bash(rm -rf /Users/shawn/Documents/_Projects/_Jinx-Cat-Studio/ios-app/Native/Resources && cd /Users/shawn/Documents/_Projects/_Jinx-Cat-Studio/ios-app/Native && xcodegen generate --spec project.yml 2>&1)",
+      "Bash(cd /Users/shawn/Documents/_Projects/_Jinx-Cat-Studio/ios-app/Native && xcodegen generate 2>&1)"
     ]
   }
 }

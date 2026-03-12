@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>Utility App</title>
+  <script type="module" crossorigin src="./index-CNMIDF1t.js"></script>
+  <link rel="stylesheet" crossorigin href="./index-BKTipEoh.css">
+</head>
+<body>
+    
+    FOFOFOFOFOFOF
+  <app-shell></app-shell>
+  <script>
+    // Debug overlay — catches JS errors and displays them on screen.
+    // Remove before shipping.
+    window.addEventListener('error', function(e) {
+      showError(e.message + '\n' + (e.filename || '') + ':' + e.lineno);
+    });
+    window.addEventListener('unhandledrejection', function(e) {
+      showError('Unhandled promise rejection:\n' + (e.reason?.stack || e.reason));
+    });
+    function showError(msg) {
+      var el = document.getElementById('__debug_overlay');
+      if (!el) {
+        el = document.createElement('div');
+        el.id = '__debug_overlay';
+        el.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;background:#1c1c1e;color:#ff453a;' +
+          'font:13px/1.5 monospace;padding:20px;overflow:auto;z-index:99999;white-space:pre-wrap;';
+        el.innerHTML = '<strong>JS Error</strong>\n\n';
+        document.body.appendChild(el);
+      }
+      el.textContent += msg + '\n\n';
+    }
+  </script>
+</body>
+</html>
