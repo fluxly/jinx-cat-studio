@@ -14,8 +14,8 @@
 		22CECEA19FF4693A3F10A565 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91B577B814A51CDEFF5FD97A /* Assets.xcassets */; };
 		259EE4300C54FE0EFE48994C /* MailRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BA3A9865A223C01D5C3D3B /* MailRequestDTO.swift */; };
 		29DC981B2F62732A00ABE708 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 29DC98172F62732A00ABE708 /* index.html */; };
-		29DC981E2F62760A00ABE708 /* index-BKTipEoh.css in Resources */ = {isa = PBXBuildFile; fileRef = 29DC981C2F62760A00ABE708 /* index-BKTipEoh.css */; };
-		29DC981F2F62760A00ABE708 /* index-CNMIDF1t.js in Resources */ = {isa = PBXBuildFile; fileRef = 29DC981D2F62760A00ABE708 /* index-CNMIDF1t.js */; };
+		29DC98242F65C1C600ABE708 /* styles.css in Resources */ = {isa = PBXBuildFile; fileRef = 29DC98232F65C1C600ABE708 /* styles.css */; };
+		29DC98252F65C1C600ABE708 /* bundle.js in Resources */ = {isa = PBXBuildFile; fileRef = 29DC98222F65C1C600ABE708 /* bundle.js */; };
 		43D2A897BE5D83CA1AA914F5 /* BridgeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0AC7793D5BF6DD06CA8FAB /* BridgeResponse.swift */; };
 		4E50FE541A3C901B8176810E /* BridgeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C219EAE08574C01A94DCDC /* BridgeRouter.swift */; };
 		52AEC094AE5EC12A7B136B39 /* MailComposeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E723E7E76E936405659F2B6E /* MailComposeService.swift */; };
@@ -46,8 +46,8 @@
 		12C219EAE08574C01A94DCDC /* BridgeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeRouter.swift; sourceTree = "<group>"; };
 		222FAA940536E0D5591F304D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		29DC98172F62732A00ABE708 /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
-		29DC981C2F62760A00ABE708 /* index-BKTipEoh.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = "index-BKTipEoh.css"; sourceTree = "<group>"; };
-		29DC981D2F62760A00ABE708 /* index-CNMIDF1t.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "index-CNMIDF1t.js"; sourceTree = "<group>"; };
+		29DC98222F65C1C600ABE708 /* bundle.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = bundle.js; sourceTree = "<group>"; };
+		29DC98232F65C1C600ABE708 /* styles.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = styles.css; sourceTree = "<group>"; };
 		3938B4DB3A56C0818C84F8C7 /* PhotoCaptureResultDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCaptureResultDTO.swift; sourceTree = "<group>"; };
 		482DE4DDCBB180DF24F575C9 /* DeviceHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceHandler.swift; sourceTree = "<group>"; };
 		5A65B6342F6500194AD30E4A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,8 +104,8 @@
 		29DC98182F62732A00ABE708 /* Web */ = {
 			isa = PBXGroup;
 			children = (
-				29DC981C2F62760A00ABE708 /* index-BKTipEoh.css */,
-				29DC981D2F62760A00ABE708 /* index-CNMIDF1t.js */,
+				29DC98222F65C1C600ABE708 /* bundle.js */,
+				29DC98232F65C1C600ABE708 /* styles.css */,
 				29DC98172F62732A00ABE708 /* index.html */,
 			);
 			path = Web;
@@ -265,9 +265,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29DC98242F65C1C600ABE708 /* styles.css in Resources */,
+				29DC98252F65C1C600ABE708 /* bundle.js in Resources */,
 				22CECEA19FF4693A3F10A565 /* Assets.xcassets in Resources */,
-				29DC981E2F62760A00ABE708 /* index-BKTipEoh.css in Resources */,
-				29DC981F2F62760A00ABE708 /* index-CNMIDF1t.js in Resources */,
 				29DC981B2F62732A00ABE708 /* index.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,7 +338,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 84W9Z6DLDJ;
+				DEVELOPMENT_TEAM = NHR8YYKC98;
 				ENABLE_PREVIEWS = NO;
 				INFOPLIST_FILE = MyIOSApp/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Jinx Cat Vault";
@@ -349,7 +349,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jinxcatstudio.myiosapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jinxcatstudio;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.9;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -362,7 +362,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 84W9Z6DLDJ;
+				DEVELOPMENT_TEAM = NHR8YYKC98;
 				ENABLE_PREVIEWS = NO;
 				INFOPLIST_FILE = MyIOSApp/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Jinx Cat Vault";
@@ -373,7 +373,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jinxcatstudio.myiosapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jinxcatstudio;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.9;
 				TARGETED_DEVICE_FAMILY = 1;

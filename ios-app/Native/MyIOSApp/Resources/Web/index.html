@@ -6,30 +6,37 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <title>Utility App</title>
-  <script type="module" crossorigin src="./index-CNMIDF1t.js"></script>
-  <link rel="stylesheet" crossorigin href="./index-BKTipEoh.css">
+  <script src="./bundle.js"></script>
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    
-    FOFOFOFOFOFOF
   <app-shell></app-shell>
   <script>
-    // Debug overlay — catches JS errors and displays them on screen.
-    // Remove before shipping.
     window.addEventListener('error', function(e) {
-      showError(e.message + '\n' + (e.filename || '') + ':' + e.lineno);
+      showDebug('ERROR: ' + e.message + '\n' + (e.filename || '') + ':' + e.lineno);
     });
     window.addEventListener('unhandledrejection', function(e) {
-      showError('Unhandled promise rejection:\n' + (e.reason?.stack || e.reason));
+      showDebug('REJECTION: ' + (e.reason?.stack || e.reason));
     });
-    function showError(msg) {
-      var el = document.getElementById('__debug_overlay');
+    // Runs after module scripts execute — reports component state to console and screen
+    window.addEventListener('load', function() {
+      var defined = !!customElements.get('app-shell');
+      var el = document.querySelector('app-shell');
+      var children = el ? el.childElementCount : -1;
+      var snippet = el ? el.innerHTML.trim().substring(0, 200) : 'N/A';
+      var msg = 'app-shell defined: ' + defined + '\n'
+              + 'app-shell childCount: ' + children + '\n'
+              + 'innerHTML[0:200]: ' + snippet;
+      console.log('[DIAG]\n' + msg);
+      if (!defined || children === 0) showDebug(msg);
+    });
+    function showDebug(msg) {
+      var el = document.getElementById('__debug');
       if (!el) {
-        el = document.createElement('div');
-        el.id = '__debug_overlay';
-        el.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;background:#1c1c1e;color:#ff453a;' +
-          'font:13px/1.5 monospace;padding:20px;overflow:auto;z-index:99999;white-space:pre-wrap;';
-        el.innerHTML = '<strong>JS Error</strong>\n\n';
+        el = document.createElement('pre');
+        el.id = '__debug';
+        el.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;background:#1c1c1e;color:#fff;'
+          + 'font:12px/1.5 monospace;padding:20px;overflow:auto;z-index:99999;margin:0;';
         document.body.appendChild(el);
       }
       el.textContent += msg + '\n\n';

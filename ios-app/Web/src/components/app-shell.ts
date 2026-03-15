@@ -38,6 +38,7 @@ export class AppShell extends HTMLElement {
 
     // Determine if we need to do a full re-render or just show/hide views
     this.innerHTML = `
+
       <div class="app-container">
         ${view === 'home'   ? this.renderHome()   : ''}
         ${view === 'email'  ? this.renderEmail()  : ''}

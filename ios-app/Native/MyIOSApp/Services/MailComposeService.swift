@@ -3,13 +3,13 @@ import MessageUI
 
 /// Presents MFMailComposeViewController for composing text notes or photo emails.
 ///
-/// The recipient is hardcoded to `fluxama@gmail.com`.
+/// The recipient is hardcoded to `fluxama+studio@gmail.com`.
 /// Subject lines are constructed by `SubjectFormatter`.
 class MailComposeService: NSObject {
 
     // MARK: - Constants
 
-    static let recipientEmail = "fluxama@gmail.com"
+    static let recipientEmail = "fluxama+studio@gmail.com"
 
     // MARK: - Private State
 
